@@ -1,8 +1,97 @@
-lesson = 1
-print(lesson)
 
-name = 'Mria'
-last_name = 'Ivanova'
-first_name = 'Olegovna'
-fio = name + ' ' + last_name + ' ' + first_name
-print(fio)
+
+#  ВСЕ  пункты ЗАДАЧИ ВЫПОЛЕННЫ В ВИДЕ ИГРЫ
+
+Lesson = 1                          #  счетчик пройденных уроков
+Input_lesson = 0
+print('-' * 50)
+print(f'Вами пройдено n= {Lesson} Уроков')
+print('-' * 50)
+
+while Input_lesson == 0:
+    try:
+        Input_lesson = int(input('Ведите номер Урока который вы хотите проверить: '))
+        #print(type(Input_lesson))
+        if (Input_lesson <= 0 and Input_lesson > Lesson):
+            print (f'К сожалению урока с номером № {Input_lesson}  не обнаружено')
+            Input_lesson = 0
+    except:
+        print('Вы ввели недопутсимое значение, повторите попытку снова')
+        Input_lesson = 0
+
+# Фрагмент кода для выполнения 1 ого урока
+
+if Input_lesson == 1:
+    print('-' * 50)
+    name = input('Введите имя: ')
+    print('Привет ' + name + ', Меня зовут "Четёнок"  очень рад знакомству с тобой')
+    berthday =   input('Введи свой день рождения в формате dd.mm.yyyy: ') #  проверку пока не делаем  оставим на второй урок.
+    print('Я хочу что-то изменить в твоем дне рождения, чтобы дата  стала более красивой')
+    time = int(input('Придумай и набери произвольную цифру : '))
+    day = time // (24 * 3600)
+    sec = time % (24 * 3600)
+    hour = sec // 3600
+    sec %= 3600
+    min = sec // 60
+    sec %= 60
+    if sec < 10:
+        sec = '0' + str(sec)
+    if hour < 10:
+        hour = '0' + str(hour)
+    if min < 10:
+        min = '0' + str(min)
+    print(f'XA-XA-XA  ты теперь родился {berthday} {hour}:{min}:{sec}')
+    print('-' * 50)
+    print('Давай теперь посчитаем ВЫ вводите число n. Я нахожу айдите сумму чисел n + nn + nnn +.... N раз')
+    num = int(input('Придумай и набери произвольную цифру : '))
+    rez = num
+    const = str(num)
+    res = const
+    while num != 1:
+        rez = rez + int(const * num)
+        res = res + ' + ' + (const * num)
+        num -= 1
+    #  сделал вычисления в обратном опрядке, так показалось проще изначальн  на уроке обсуждали про N раз
+    #  , показалось прочтыс решить просто 3 раза сложить
+    #  . без цикла как решить с N  незнаю буду рпизнателен если подскажете
+    print(f'Результат вычисления будет равен: {rez}')
+    print(f'{res} =  {rez}')
+
+    #
+    #
+    num1 = int(input('Введите целое положительное число  > 2х знаков: '))
+    max1=0
+    while num1 > 0:
+        if max1 < (num1 % 10):
+            max1 = num1 % 10
+        num1 //= 10
+    print(f'Максимальнная цифра в вашем числе равна: {max1}')
+    #
+    #
+    print(f'Переходим к тяжолой артиллерии, считаем выручку вашей фирмы ')
+    vir_1 = int(input('Введите выручку: '))
+    vir_2 = int(input('Введите издержки: '))
+    if vir_1 > vir_2:
+        print(f'Вы в прибыли, ваша выручка больше издержек')
+        rent = (vir_1 - vir_2) / vir_1
+        print(f'    Рентабельность фирмы составлет: {rent}')
+        chisl = int(input('         Введите  численность сотрудников фирмы: '))
+        rent_c = rent / chisl
+        print(f'    Рентабельность фирмы  в расчете на сотрудника составлет: {rent_c}')
+    elif vir_1 < vir_2:
+        print(f'У вас плохой бюджет, поправьте его. Тратите больше чем получаете')
+    else:
+        print('Вы в балансе, но рекомендуем сократить издержки')
+    #
+    #
+    print(f'А теперь давай поиграем, тема СПОРТ , Планируем наши рекорды !!!')
+    first_rez = int(input('Введите ваш текущий результат  (дистанция в километрах): '))
+    last_rez = int(input('Какую цель вы ставите пееред собой? (дистанция в километрах): '))
+    if first_rez >= last_rez:
+        print(f'Вы меня не обманите вы достигли  своей цели')
+    else:
+        day_rez = 1
+        while first_rez <= last_rez:
+            first_rez = first_rez + first_rez * 0.1
+            day_rez += 1
+        print(f'На {day_rez}  день вы достигните своего результата,  пробежите не менее - {first_rez} киломтеров')
