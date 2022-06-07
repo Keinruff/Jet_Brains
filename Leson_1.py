@@ -12,7 +12,7 @@ while Input_lesson == 0:
     try:
         Input_lesson = int(input('Ведите номер Урока который вы хотите проверить: '))
         #print(type(Input_lesson))
-        if (Input_lesson <= 0 and Input_lesson > Lesson):
+        if (Input_lesson <= 0 or Input_lesson > Lesson):
             print (f'К сожалению урока с номером № {Input_lesson}  не обнаружено')
             Input_lesson = 0
     except:
