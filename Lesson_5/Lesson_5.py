@@ -95,3 +95,4 @@ with open(r'Chapter_6.txt', 'r', encoding='utf-8') as file:
             #n = ''.join([n, (e if e in '0123456789' else ' ')])
            # print(n)
             #rez = [int(i) for i in n.split()]
+    #print
