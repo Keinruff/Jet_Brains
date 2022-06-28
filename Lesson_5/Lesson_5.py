@@ -44,25 +44,39 @@
 
 
 # # Chapter4
-di = {    'Zero' :'Ноль'
-        , 'One'  :'Один'
-        , 'Two'  :'Два'
-        , 'Three' :'Три'
-        , 'Four' :'Четыре'
-        , 'Five' :'Пять'
-        , 'Six'  :'Шесть'
-        , 'Seven':'Семь'
-        , 'Eight':'Восемь'
-        , 'Nine' :'Восемь'
+# di = {    'Zero' :'Ноль'
+#         , 'One'  :'Один'
+#         , 'Two'  :'Два'
+#         , 'Three' :'Три'
+#         , 'Four' :'Четыре'
+#         , 'Five' :'Пять'
+#         , 'Six'  :'Шесть'
+#         , 'Seven':'Семь'
+#         , 'Eight':'Восемь'
+#         , 'Nine' :'Девять'
+#
+#        }
+#
+# with open(r'Chapter_4.txt', 'r', encoding='utf-8') as file_r:
+#     with open(r'Chapter_4_1.txt', 'w', encoding='utf-8') as file_w:
+#         for l in file_r:
+#             print(l.split())
+#             text = (l.replace(l.split()[0], di.get(l.split()[0])))
+#             print(text)
+#             file_w.writelines(text)
 
-       }
 
-with open(r'Chapter_4.txt', 'r', encoding='utf-8') as file_r:
-    with open(r'Chapter_4_1.txt', 'w', encoding='utf-8') as file_w:
-        for l in file_r:
-            print(l.split())
-            text = (l.replace(l.split()[0], di.get(l.split()[0])))
-            print(text)
-            file_w.writelines(text)
-
+# # Chapter5
+# from random import randint
+# with open(r'Chapter_5.txt', 'w', encoding='utf-8') as file:
+#     num = [randint(1,20) for i in range(50)]
+#     file.write(' '.join(map(str, num)))
+#
+# with open(r'Chapter_5.txt', 'r', encoding='utf-8') as file:
+#     for i in file:
+#         li = i.split()
+# summ = 0
+# for j in range(1, len(li)):
+#     summ += int(li[j])
+# print(summ)
 
